@@ -34,5 +34,23 @@ namespace Projekt_PalDavid
             }
                 
         }
+
+        private void athelyezes_Click(object sender, RoutedEventArgs e)
+        {
+            toroltek.Items.Add(feladatok.SelectedItem);
+            feladatok.Items.Remove(feladatok.SelectedItem);
+            
+        }
+
+        private void torles_Click(object sender, RoutedEventArgs e)
+        {
+            toroltek.Items.Remove(toroltek.SelectedItem);
+        }
+
+        private void visszaalitas_Click(object sender, RoutedEventArgs e)
+        {
+            feladatok.Items.Add(toroltek.SelectedItem);
+            toroltek.Items.Remove(toroltek.SelectedItem);
+        }
     }
 }

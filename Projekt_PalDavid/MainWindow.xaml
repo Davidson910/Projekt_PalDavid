@@ -13,16 +13,16 @@
         <ListBox SelectionMode="Multiple" Width="400" HorizontalAlignment="Left" Margin="10,61,0,0" Name="feladatok" Height="200" VerticalAlignment="Top"/>
 
         <Label Content="Törölt feladatok" HorizontalAlignment="Left" Margin="10,266,0,0" VerticalAlignment="Top"/>
-        <ListBox SelectionMode="Multiple" Height="100" Margin="10,297,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="400"/>
+        <ListBox SelectionMode="Multiple" Name="toroltek" Height="100" Margin="10,297,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="400"/>
 
         <Label Content="Feladat szövege:" HorizontalAlignment="Left" Margin="415,30,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Margin="415,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Name="feladatNeve"/>
 
         <Button Content="Új hozzáadása" Name="hozzaadas" HorizontalAlignment="Left" Margin="415,84,0,0" VerticalAlignment="Top" Width="160" Click="hozzaadas_Click"/>
         <Button Content="Kijelölt feladat módosítása" HorizontalAlignment="Left" Margin="415,109,0,0" VerticalAlignment="Top" Width="160"/>
-        <Button Content="Kijelölt feladat törlése" Name="torles" HorizontalAlignment="Left" Margin="415,134,0,0" VerticalAlignment="Top" Width="160"/>
+        <Button Content="Kijelölt feladat törlése" Name="athelyezes" HorizontalAlignment="Left" Margin="415,134,0,0" VerticalAlignment="Top" Width="160" Click="athelyezes_Click"/>
 
-        <Button Content="Kijelölt feladat visszaállítása" HorizontalAlignment="Left" Margin="415,297,0,0" VerticalAlignment="Top" Width="160"/>
-        <Button Content="Kijelölt feladat végleg törlése" HorizontalAlignment="Left" Margin="415,322,0,0" VerticalAlignment="Top" Width="160"/>
+        <Button Content="Kijelölt feladat visszaállítása" Name="visszaalitas" HorizontalAlignment="Left" Margin="415,297,0,0" VerticalAlignment="Top" Width="160" Click="visszaalitas_Click"/>
+        <Button Content="Kijelölt feladat végleg törlése" Name="torles" HorizontalAlignment="Left" Margin="415,322,0,0" VerticalAlignment="Top" Width="160" Click="torles_Click"/>
     </Grid>
 </Window>
