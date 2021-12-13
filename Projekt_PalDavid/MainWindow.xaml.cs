@@ -40,6 +40,7 @@ namespace Projekt_PalDavid
                 feladatokElemei.Add(feladat);
                 feladatNeve.Clear();
                 feladatok.Items.Refresh();
+                
             }
                 
         }
@@ -68,6 +69,18 @@ namespace Projekt_PalDavid
             toroltekElemei.Remove(feladat);
             feladatok.Items.Refresh();
             toroltek.Items.Refresh();
+        }
+
+        private void feladatok_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            CheckBox feladat = (CheckBox)feladatok.SelectedItem;
+            feladatNeve.Text = (string)feladat.Content;
+        }
+
+        private void modositas_Click(object sender, RoutedEventArgs e)
+        {
+            CheckBox feladat = (CheckBox)feladatok.SelectedItem;
+            feladat.Content = feladatNeve.Text;
         }
     }
 }
