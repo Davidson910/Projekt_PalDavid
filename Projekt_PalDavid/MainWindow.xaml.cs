@@ -67,6 +67,7 @@ namespace Projekt_PalDavid
             CheckBox feladat = (CheckBox)feladatok.SelectedItem;
             toroltekElemei.Add(feladat);
             feladatokElemei.Remove(feladat);
+            feladatNeve.Clear();
             feladatok.Items.Refresh();
             toroltek.Items.Refresh();
             
@@ -91,6 +92,7 @@ namespace Projekt_PalDavid
         private void feladatok_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             CheckBox feladat = (CheckBox)feladatok.SelectedItem;
+            if(feladat != null)
             feladatNeve.Text = (string)feladat.Content;
         }
 
