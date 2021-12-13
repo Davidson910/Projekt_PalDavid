@@ -40,9 +40,24 @@ namespace Projekt_PalDavid
                 feladatokElemei.Add(feladat);
                 feladatNeve.Clear();
                 feladatok.Items.Refresh();
-                
+                feladat.Checked += new RoutedEventHandler(pipa);
+                feladat.Unchecked += new RoutedEventHandler(nemPipa);
             }
                 
+        }
+
+        private void nemPipa(object sender, RoutedEventArgs e)
+        {
+            CheckBox feladat = (CheckBox)sender;
+            feladat.Foreground = Brushes.Black;
+            feladat.FontStyle = FontStyles.Normal;
+        }
+
+        private void pipa(object sender, RoutedEventArgs e)
+        {
+            CheckBox feladat = (CheckBox)sender;
+            feladat.Foreground = Brushes.Gray;
+            feladat.FontStyle = FontStyles.Italic;
         }
 
         private void athelyezes_Click(object sender, RoutedEventArgs e)
