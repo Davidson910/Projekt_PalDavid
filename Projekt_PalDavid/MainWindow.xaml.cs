@@ -20,37 +20,54 @@ namespace Projekt_PalDavid
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<CheckBox> feladatokElemei = new List<CheckBox>();
+        List<CheckBox> toroltekElemei = new List<CheckBox>();
+
         public MainWindow()
         {
             InitializeComponent();
+            feladatok.ItemsSource = feladatokElemei;
+            toroltek.ItemsSource = toroltekElemei;
         }
 
         private void hozzaadas_Click(object sender, RoutedEventArgs e)
         {
-            if(feladatNeve.Text != "") 
+            if(feladatNeve.Text != "")
             {
-                feladatok.Items.Add(feladatNeve.Text);
+                CheckBox feladat = new CheckBox();
+                feladat.IsChecked = false;
+                feladat.Content = feladatNeve.Text;
+                feladatokElemei.Add(feladat);
                 feladatNeve.Clear();
+                feladatok.Items.Refresh();
             }
                 
         }
 
         private void athelyezes_Click(object sender, RoutedEventArgs e)
         {
-            toroltek.Items.Add(feladatok.SelectedItem);
-            feladatok.Items.Remove(feladatok.SelectedItem);
+            CheckBox feladat = (CheckBox)feladatok.SelectedItem;
+            toroltekElemei.Add(feladat);
+            feladatokElemei.Remove(feladat);
+            feladatok.Items.Refresh();
+            toroltek.Items.Refresh();
             
         }
 
         private void torles_Click(object sender, RoutedEventArgs e)
         {
-            toroltek.Items.Remove(toroltek.SelectedItem);
+            CheckBox feladat = (CheckBox)toroltek.SelectedItem;
+            toroltekElemei.Remove(feladat);
+            toroltek.Items.Refresh();
         }
 
         private void visszaalitas_Click(object sender, RoutedEventArgs e)
         {
-            feladatok.Items.Add(toroltek.SelectedItem);
-            toroltek.Items.Remove(toroltek.SelectedItem);
+            CheckBox feladat = (CheckBox)toroltek.SelectedItem;
+            feladatokElemei.Add(feladat);
+            toroltekElemei.Remove(feladat);
+            feladatok.Items.Refresh();
+            toroltek.Items.Refresh();
         }
     }
 }
